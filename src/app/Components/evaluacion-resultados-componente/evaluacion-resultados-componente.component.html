@@ -1,1 +1,59 @@
 <p>evaluacion-resultados-componente works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h2,
+        input {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+        }
+        
+        button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados</h1>
+
+    <table border="1">
+        <tr>
+            <td></td>
+            <td>Dinero en Soles</td>
+            <td>Porcentaje del valor de vehiculo</td>
+        </tr>
+        <tr>
+            <td>Valor del vehiculo:</td>
+            <td><input type="text" id="valorVehiculo"></td>
+            <td><input type="text" id="porcentajeValorVehiculo"></td>
+        </tr>
+        <tr>
+            <td>Cuota Inicial</td>
+            <td><input type="text" id="cuotaInicial"></td>
+            <td><input type="text" id="porcentajeCuotaInicial"></td>
+        </tr>
+        <tr>
+            <td>Monto de prestamo:</td>
+            <td><input type="text" id="montoPrestamo"></td>
+            <td><input type="text" id="porcentajeMontoPrestamo"></td>
+        </tr>
+    </table>
+
+    <h2>Saldo: <input type="text" id="saldo"></h2>
+    <h2>Amortización: <input type="text" id="amortizacion"></h2>
+    <h2>Interes: <input type="text" id="interes"></h2>
+    <h2>Envio Fisico: <input type="text" id="envioFisico"></h2>
+    <h2>seg.Desgravem: <input type="text" id="segDesgravem"></h2>
+    <h2>Cuota Mensual: <input type="text" id="cuotaMensual"></h2>
+    <h2>Seguro bien: <input type="text" id="seguroBien"></h2>
+
+    <br>
+
+    <button type="button">ANTERIOR</button>
+    <button type="button">Ir al Cronograma de Pagos</button>
+</body>
+</html>           
