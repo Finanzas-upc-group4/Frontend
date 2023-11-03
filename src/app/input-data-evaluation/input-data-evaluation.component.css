@@ -47,3 +47,11 @@ input[type="text"] {
     border-radius: 10px;
     width: 30%;
 }
+.logo {
+    position: absolute;
+    top: 180px;
+    right: 600px;
+    width: 90px;
+    height: 90px;
+}
+
