@@ -1,1 +1,33 @@
-<p>registro-solicitud works!</p>
+
+<div class="grid-layout">
+    <div class="content">
+        <h1 class="title">Registro de Solicitud</h1>
+        <form class="form" (ngSubmit)="submitForm()" #solicitudForm="ngForm">
+            <div class="form-group">
+                <label class="labelText" for="creditCurrency">Moneda de Crédito:</label>
+                <br><br>
+                <select class="inputs" id="creditCurrency" name="creditCurrency" [(ngModel)]="formData.creditCurrency" required>
+                    <option value="dolares">Dólares</option>
+                    <option value="soles">Soles</option>
+                </select>
+                <br><br>
+            </div>
+
+            <div class="form-group">
+                <label class="labelText" for="disbursementDate">Fecha de Desembolso:</label>
+                <br><br>
+                <input class="inputs" type="date" id="disbursementDate" name="disbursementDate" [(ngModel)]="formData.disbursementDate" required>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <label class="labelText" for="payDay">Día de Pago:</label>
+                <br><br>
+                <input class="inputs" type="date" id="payDay" name="payDay" [(ngModel)]="formData.payDay" required>
+            </div>
+            <br><br>
+            <button type="submit" class="animated-button">Siguiente</button>
+            <br><br>
+            <button class="animated-button" >Regresar al inicio de sesion</button>
+        </form>
+    </div>
+</div>

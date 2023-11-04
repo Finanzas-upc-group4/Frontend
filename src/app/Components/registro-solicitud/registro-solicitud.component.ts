@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro-solicitud.component.css']
 })
 export class RegistroSolicitudComponent {
+  formData: any = {
+    creditCurrency: 'dolares'
+  };
 
+  submitForm() {
+    console.log(this.formData);
+  }
 }
