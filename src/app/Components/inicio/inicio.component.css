@@ -1,6 +1,6 @@
 #titulo {
     text-align: center;
-    margin-top: -20px;
+    margin-top: -40px;
     font-size: 50px;
 }
 
@@ -22,7 +22,7 @@
     display: block;
     margin: 0 auto;
     text-align: center;
-    font-size: 25px; /* Ajusta el tamaño de fuente según tus preferencias */
+    font-size: 25px;
 }
 
 #button-container {
@@ -36,7 +36,7 @@
     margin: 0 auto;
 }
 
-#login-button, #register-button {
+#register-button {
     background-color: red;
     color: white;
     padding: 10px 35px;
@@ -44,4 +44,28 @@
     cursor: pointer;
     font-size: 16px;
     border-radius: 10px;
+    white-space: nowrap;
+}
+
+body {
+    background-image: url('fondo3.png');
+    background-size:    cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#login-button {
+    background-color: red;
+    color: white;
+    padding: 10px 35px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-right: 100px;
+    white-space: nowrap;
 }
