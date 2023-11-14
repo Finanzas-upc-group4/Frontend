@@ -1,4 +1,4 @@
-.grid-layout{
+.grid-layout {
     margin: 0;
     padding: 0;
     display: grid;
@@ -6,4 +6,55 @@
     text-align: center;
     grid-template-rows: 100vh;
     background-image: url("../../assets/background.jpg");
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    height: 100%;
+    grid-column: 2/ span 10;
+}
+.titulo h1{
+    font-size: 90px;
+}
+
+.titulo{
+
+    color: black;
+    text-shadow: 2px 2px 4px #000000;
+    grid-column: 0/ span 10;
+
+
+}
+
+.table-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mat-table {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+
+}
+
+.mat-cell {
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+    background-color: #f0f0f0;
 }
