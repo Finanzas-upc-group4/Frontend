@@ -1,4 +1,4 @@
-<p>evaluacion-resultados-componente works!</p>
+<p></p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +15,12 @@
         button {
             margin-right: 10px;
         }
+        
     </style>
+    <link rel="stylesheet" href="evaluacion-resultados-componente.component.css">
 </head>
 <body>
+    <div class="container"></div>
     <h1>Resultados</h1>
 
     <table border="1">
@@ -43,17 +46,24 @@
         </tr>
     </table>
 
+    <div class="flex-container">
     <h2>Saldo: <input type="text" id="saldo"></h2>
     <h2>Amortización: <input type="text" id="amortizacion"></h2>
+    <br>
     <h2>Interes: <input type="text" id="interes"></h2>
     <h2>Envio Fisico: <input type="text" id="envioFisico"></h2>
+    <br>
     <h2>seg.Desgravem: <input type="text" id="segDesgravem"></h2>
     <h2>Cuota Mensual: <input type="text" id="cuotaMensual"></h2>
+    <br>
     <h2>Seguro bien: <input type="text" id="seguroBien"></h2>
-
+    </div>    
     <br>
 
     <button type="button">ANTERIOR</button>
     <button type="button">Ir al Cronograma de Pagos</button>
+
+</div>
+
 </body>
-</html>           
+</html>        
