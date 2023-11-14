@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RegistroDatosComponent } from './Components/registro-datos/registro-datos.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,10 @@ import { RegistroDatosComponent } from './Components/registro-datos/registro-dat
     RegistroDatosComponent
   ],
   imports: [
-    BrowserModule
+      HttpClientModule,
+      AppRoutingModule,
+      BrowserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
