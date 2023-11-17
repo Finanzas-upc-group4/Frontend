@@ -9,12 +9,14 @@ import {MatSortModule} from "@angular/material/sort";
 import {CronogramaComponent} from "./Components/cronograma/cronograma.component";
 import {MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
+import { InputDataEvaluationComponent } from './input-data-evaluation/input-data-evaluation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroSolicitudComponent,
-    CronogramaComponent
+    CronogramaComponent,
+    InputDataEvaluationComponent
   ],
     imports: [
         BrowserModule,
@@ -24,8 +26,6 @@ import { MatIconModule} from "@angular/material/icon";
         MatSortModule,
         MatIconModule,
         MatButtonModule
-
-
 
     ],
   providers: [],
