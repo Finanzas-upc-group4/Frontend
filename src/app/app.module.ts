@@ -10,13 +10,15 @@ import {CronogramaComponent} from "./Components/cronograma/cronograma.component"
 import {MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
 import { InputDataEvaluationComponent } from './input-data-evaluation/input-data-evaluation.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroSolicitudComponent,
     CronogramaComponent,
-    InputDataEvaluationComponent
+    InputDataEvaluationComponent,
+    InicioComponent
   ],
     imports: [
         BrowserModule,
