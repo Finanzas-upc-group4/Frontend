@@ -11,6 +11,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { MatIconModule} from "@angular/material/icon";
 import { InputDataEvaluationComponent } from './input-data-evaluation/input-data-evaluation.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
+import { EvaluacionResultadosComponenteComponent } from './Components/evaluacion-resultados-componente/evaluacion-resultados-componente.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InicioComponent } from './Components/inicio/inicio.component';
     RegistroSolicitudComponent,
     CronogramaComponent,
     InputDataEvaluationComponent,
-    InicioComponent
+    InicioComponent,
+    EvaluacionResultadosComponenteComponent
   ],
     imports: [
         BrowserModule,
