@@ -12,6 +12,9 @@ import { MatIconModule} from "@angular/material/icon";
 import { InputDataEvaluationComponent } from './input-data-evaluation/input-data-evaluation.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
 import { EvaluacionResultadosComponenteComponent } from './Components/evaluacion-resultados-componente/evaluacion-resultados-componente.component';
+import { RegistroDatosComponent } from './Components/registro-datos/registro-datos.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { EvaluacionResultadosComponenteComponent } from './Components/evaluacion
     CronogramaComponent,
     InputDataEvaluationComponent,
     InicioComponent,
-    EvaluacionResultadosComponenteComponent
+    EvaluacionResultadosComponenteComponent,
+    RegistroDatosComponent
   ],
     imports: [
         BrowserModule,
@@ -29,7 +33,9 @@ import { EvaluacionResultadosComponenteComponent } from './Components/evaluacion
         MatTableModule,
         MatSortModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        AppRoutingModule,
+        HttpClientModule,
 
     ],
   providers: [],

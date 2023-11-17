@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+    font-size: large;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    width: 300px;
+    background-color: rgba(222, 139, 185, 0.84);
+    color: white;
+    font-size: larger;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.my-photo {
+    margin-bottom: 15px;
+}
+
+.my-photo-image {
+    border-radius: 50%;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: x-large;
+    font-family: 'Courier New', monospace;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.label-left {
+    text-align: left;}
