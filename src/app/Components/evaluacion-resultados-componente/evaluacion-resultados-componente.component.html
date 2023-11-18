@@ -25,45 +25,39 @@
 
     <table border="1">
         <tr>
-            <td></td>
-            <td>Dinero en Soles</td>
-            <td>Porcentaje del valor de vehiculo</td>
-        </tr>
-        <tr>
             <td>Valor del vehiculo:</td>
-            <td><input type="text" id="valorVehiculo"></td>
-            <td><input type="text" id="porcentajeValorVehiculo"></td>
+            <td><input type="text" [(ngModel)]="valorVehiculo" readonly></td>
+            <td><input type="text" [(ngModel)]="porcentajeValorVehiculo" readonly></td>
         </tr>
         <tr>
             <td>Cuota Inicial</td>
-            <td><input type="text" id="cuotaInicial"></td>
-            <td><input type="text" id="porcentajeCuotaInicial"></td>
+            <td><input type="text" [(ngModel)]="cuotaInicial" readonly></td>
+            <td><input type="text" [(ngModel)]="porcentajeCuotaInicial" readonly></td>
         </tr>
         <tr>
             <td>Monto de prestamo:</td>
-            <td><input type="text" id="montoPrestamo"></td>
-            <td><input type="text" id="porcentajeMontoPrestamo"></td>
+            <td><input type="text" [(ngModel)]="montoPrestamo" readonly></td>
+            <td><input type="text" [(ngModel)]="porcentajeMontoPrestamo" readonly></td>
         </tr>
     </table>
 
     <div class="flex-container">
-    <h2>Saldo: <input type="text" id="saldo"></h2>
-    <h2>Amortización: <input type="text" id="amortizacion"></h2>
-    <br>
-    <h2>Interes: <input type="text" id="interes"></h2>
-    <h2>Envio Fisico: <input type="text" id="envioFisico"></h2>
-    <br>
-    <h2>seg.Desgravem: <input type="text" id="segDesgravem"></h2>
-    <h2>Cuota Mensual: <input type="text" id="cuotaMensual"></h2>
-    <br>
-    <h2>Seguro bien: <input type="text" id="seguroBien"></h2>
+        <h2>Saldo: <input type="text" [(ngModel)]="saldo" readonly></h2>
+        <h2>Amortización: <input type="text" [(ngModel)]="amortizacion" readonly></h2>
+        <br>
+        <h2>Interes: <input type="text" [(ngModel)]="interes" readonly></h2>
+        <h2>Envio Fisico: <input type="text" [(ngModel)]="envioFisico" readonly></h2>
+        <br>
+        <h2>seg.Desgravem: <input type="text" [(ngModel)]="segDesgravem" readonly></h2>
+        <h2>Cuota Mensual: <input type="text" [(ngModel)]="cuotaMensual" readonly></h2>
+        <br>
+        <h2>Seguro bien: <input type="text" [(ngModel)]="seguroBien" readonly></h2>
     </div>    
     <br>
 
-    <button type="button">ANTERIOR</button>
-    <button type="button">Ir al Cronograma de Pagos</button>
+    <button type="button" (click)="onAnteriorClick()">ANTERIOR</button>
+    <button type="button" (click)="onIrCronogramaClick()">Ir al Cronograma de Pagos</button>
 
-</div>
 
 </body>
 </html>        
