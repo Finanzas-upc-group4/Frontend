@@ -1,70 +1,75 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro General</title>
-    <link rel="stylesheet" type="text/css" href="input-data-evaluation.component.css">
-</head>
 <body>
 <img src="logo.png" alt="Logo de la calculadora" class="logo">
 <div class="container">
     <h1>Registro General</h1>
-    <form>
+    <form (ngSubmit)="submitForm()">
         <h2>Datos de entrada</h2>
+
         <div class="input-row">
             <label for="vehicleValue">Valor de Vehículo:</label>
-            <input type="text" id="vehicleValue" name="vehicleValue" required>
+            <input type="number" id="vehicleValue" name="vehicleValue" [(ngModel)]="formData.vehicleValue" (change)="updateLoanAmount()" required min="0">
         </div>
 
         <div class="input-row">
-            <label for="initialPayment">Cuota Inicial:</label>
-            <input type="text" id="initialPayment" name="initialPayment" required>
+            <label for="initialPayment">Cuota Inicial: (20% recomendado)</label>
+            <input type="number" id="initialPayment" name="initialPayment" [(ngModel)]="formData.initialPayment" (change)="updateLoanAmount()" required min="0">
         </div>
 
         <div class="input-row">
             <label for="loanAmount">Monto de Préstamo:</label>
-            <input type="text" id="loanAmount" name="loanAmount" required>
+            <input type="number" id="loanAmount" name="loanAmount" [(ngModel)]="formData.loanAmount" required [readonly]="true" >
         </div>
 
         <div class="input-row">
             <label for="annualInterestRate">Tasa Efectiva Anual:</label>
-            <input type="text" id="annualInterestRate" name="annualInterestRate" required>
+            <div class="input-group">
+                <input type="number" id="annualInterestRate" name="annualInterestRate" [(ngModel)]="formData.annualInterestRate" (change)="updateLoanAmount()" required min="0">
+                <span class="percentage-symbol">%</span>
+            </div>
         </div>
 
         <div class="input-row">
             <label for="paymentsPerYear">Cuotas al Año:</label>
-            <input type="text" id="paymentsPerYear" name="paymentsPerYear" required>
+            <input type="number" id="paymentsPerYear" name="paymentsPerYear" [(ngModel)]="formData.paymentsPerYear" required [readonly]="true" min="0">
         </div>
 
         <div class="input-row">
             <label for="paymentPeriod">Periodo de Pago:</label>
-            <input type="text" id="paymentPeriod" name="paymentPeriod" required>
+            <select id="paymentPeriod" name="paymentPeriod" [(ngModel)]="formData.paymentPeriod" required>
+                <option value="24">24 meses</option>
+                <option value="36">36 meses</option>
+            </select>
         </div>
 
         <div class="input-row">
             <label for="individualLifeInsuranceRate">Tasa de Seguro de Desgravamen Individual:</label>
-            <input type="text" id="individualLifeInsuranceRate" name="individualLifeInsuranceRate" required>
+            <div class="input-group">
+                <input type="number" id="individualLifeInsuranceRate" name="individualLifeInsuranceRate" [(ngModel)]="formData.individualLifeInsuranceRate" required min="0">
+                <span class="percentage-symbol">%</span>
+            </div>
         </div>
 
         <div class="input-row">
             <label for="vehicleInsuranceRate">Tasa de Seguro Vehicular Anual:</label>
-            <input type="text" id="vehicleInsuranceRate" name="vehicleInsuranceRate" required>
-        </div>
+            <div class="input-group">
+                <input type="number" id="vehicleInsuranceRate" name="vehicleInsuranceRate" [(ngModel)]="formData.vehicleInsuranceRate" required min="0">
+                <span class="percentage-symbol">%</span>
+            </div>
 
+        </div>
         <div class="input-row">
             <label for="physicalStatementDelivery">Envío Físico de Estado de Cuenta:</label>
-            <input type="text" id="physicalStatementDelivery" name="physicalStatementDelivery" required>
+            <input type="number" id="physicalStatementDelivery" name="physicalStatementDelivery" [(ngModel)]="formData.physicalStatementDelivery" required min="0">
         </div>
 
         <div class="button-container">
             <button type="submit" class="button">Evaluar</button>
+            <br>
             <button type="button" class="button">Salir</button>
         </div>
-
     </form>
 </div>
 </body>
-</html>
 
 
 
