@@ -28,6 +28,7 @@ export class RegistroSolicitudComponent {
     };
     localStorage.setItem('solicitud', JSON.stringify(jsonData));
     localStorage.getItem('solicitud');
+    localStorage.setItem('moneda', this.formData.creditCurrency);
     //console.log("esto es desde el local storage: "+localStorage.getItem('solicitud'));
     const soli :any= (localStorage.getItem('solicitud'));
     //const soli2 = JSON.parse(soli);
