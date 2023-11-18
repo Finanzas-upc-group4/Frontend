@@ -8,6 +8,8 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./cronograma.component.css']
 })
 export class CronogramaComponent {
+  resultadosIteraciones = JSON.parse(localStorage.getItem('resultadosIteraciones') || '[]');
+  results = new MatTableDataSource(this.resultadosIteraciones)
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
   datos = [
