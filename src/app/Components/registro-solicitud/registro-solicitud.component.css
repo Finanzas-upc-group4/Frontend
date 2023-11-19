@@ -48,3 +48,8 @@ button{
 button:hover {
     background-color: darkred;
 }
+button{
+    grid-column: 5/ span 2;
+    margin: 1vh;
+
+}

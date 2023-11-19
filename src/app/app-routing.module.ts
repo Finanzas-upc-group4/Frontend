@@ -8,15 +8,17 @@ import {
     EvaluacionResultadosComponenteComponent
 } from "./Components/evaluacion-resultados-componente/evaluacion-resultados-componente.component";
 import {CronogramaComponent} from "./Components/cronograma/cronograma.component";
+import {InicioComponent} from "./Components/inicio/inicio.component";
 
 const routes: Routes = [
+    {path: '', component: InicioComponent},
+    {path: 'login', component: InicioComponent},
     { path: 'input-data-evaluation', component: InputDataEvaluationComponent },
-    {path: 'registrar-datos', component:RegistroDatosComponent},
-    {path: 'login', component:RegistroDatosComponent},
     {path: 'register', component:RegistroDatosComponent},
     {path: 'registro-solicitud', component: RegistroSolicitudComponent},
     {path: 'resultado-evaluacion', component: EvaluacionResultadosComponenteComponent},
-    {path:'cronograma', component: CronogramaComponent}
+    {path:'cronograma', component: CronogramaComponent},
+    {path: 'login', component: InicioComponent}
 ];
 
 @NgModule({

@@ -47,8 +47,8 @@ export class InputDataEvaluationComponent {
     const resultados = [];
 
     // Número de iteraciones (ajusta según tus necesidades)
-    const numIteraciones = this.formData.paymentPeriod+1;
-
+    const numIteraciones = Number(this.formData.paymentPeriod)+1;
+    console.log("Numero de iteraciones: " + numIteraciones);
     for (let i = 0; i < numIteraciones; i++) {
 
       //FORMULAS
@@ -122,10 +122,7 @@ export class InputDataEvaluationComponent {
       this.formData.loanAmount = this.formData.loanAmount - CA;
       // Ajustar fecha para la siguiente iteración
       dateObject.setMonth(dateObject.getMonth() + 1);
-      // Verificar si se llegó al final del año
-      if (dateObject.getMonth() === 0) {
-        dateObject.setFullYear(dateObject.getFullYear() + 1);
-      }
+
       lastDayOfMonth = new Date(dateObject.getFullYear(), dateObject.getMonth() + 1, 0).getDate();
     }
 

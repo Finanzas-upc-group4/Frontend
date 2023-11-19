@@ -15,6 +15,7 @@ import { EvaluacionResultadosComponenteComponent } from './Components/evaluacion
 import { RegistroDatosComponent } from './Components/registro-datos/registro-datos.component';
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {AppRoutingModule} from "./app-routing.module";
         MatButtonModule,
         AppRoutingModule,
         HttpClientModule,
+        NgOptimizedImage,
 
     ],
   providers: [],

@@ -23,7 +23,7 @@ export class CronogramaComponent {
     }
   }
   ngOnInit(): void {
-    // Llama a la función en el método ngOnInit
+
     this.determinarSimboloMoneda();
   }
 
