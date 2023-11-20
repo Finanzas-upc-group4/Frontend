@@ -14,7 +14,7 @@ export class RegistroSolicitudComponent {
     fechaDesembolso: '',
     diaDePago: '',
   };
-
+  RegresarInicio() { this.router.navigate(['/home']);}
   submitForm() {
     if (this.formData.creditCurrency === '' || this.formData.disbursementDate === '' || this.formData.payDay <= 0) {
       alert('Por favor complete todos los campos antes de enviar el formulario.');

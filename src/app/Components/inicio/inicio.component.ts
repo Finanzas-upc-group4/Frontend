@@ -34,7 +34,7 @@ export class InicioComponent {
           if (usuario.password === password) {
             localStorage.setItem('UserId', usuario.id);
             console.log('UserId:', localStorage.getItem('UserId'));
-            this.router.navigate(['/registro-solicitud']);
+            this.router.navigate(['/home']);
           } else {
 
             alert('Contraseña incorrecta');

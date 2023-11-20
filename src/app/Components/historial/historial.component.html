@@ -1,0 +1,16 @@
+
+<div class="grid-layout">
+    <div class="content">
+        <h1 class="title">Registro de Solicitud</h1>
+        <ul>
+            <li *ngFor="let cronograma of historialList">
+                {{ cronograma.id }} - {{ cronograma.fechaDesembolso }}
+                <button (click)="verDetalles(cronograma.id)">Ver Detalles</button>
+                <br><br>
+            </li>
+        </ul>
+
+        <button class="animated-button" (click)="RegresarInicio()">Regresar</button>
+
+    </div>
+</div>

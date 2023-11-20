@@ -16,6 +16,8 @@ import { RegistroDatosComponent } from './Components/registro-datos/registro-dat
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import {NgOptimizedImage} from "@angular/common";
+import { HomeComponent } from './Components/home/home.component';
+import { HistorialComponent } from './Components/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {NgOptimizedImage} from "@angular/common";
     InputDataEvaluationComponent,
     InicioComponent,
     EvaluacionResultadosComponenteComponent,
-    RegistroDatosComponent
+    RegistroDatosComponent,
+    HomeComponent,
+    HistorialComponent
   ],
     imports: [
         BrowserModule,

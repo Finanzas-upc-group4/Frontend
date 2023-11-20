@@ -15,10 +15,15 @@ export class ApiService {
   postDatosRegister(datos: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, datos);
   }
-
+  getDatosRegister(idUser: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/register/historial/${idUser}`);
+  }
+  getDatosRegisterId(idUser: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/register/${idUser}`);
+  }
   //Registro General Data
   getGeneralData(idUser: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/generalData/idUsuario/${idUser}`);
+    return this.http.get<any>(`${this.apiUrl}/generalData/${idUser}`);
   }
   postGeneralData(datos: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/generalData`, datos);

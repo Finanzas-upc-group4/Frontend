@@ -9,9 +9,13 @@ import {
 } from "./Components/evaluacion-resultados-componente/evaluacion-resultados-componente.component";
 import {CronogramaComponent} from "./Components/cronograma/cronograma.component";
 import {InicioComponent} from "./Components/inicio/inicio.component";
+import {HomeComponent} from "./Components/home/home.component";
+import {HistorialComponent} from "./Components/historial/historial.component";
 
 const routes: Routes = [
     {path: '', component: InicioComponent},
+    {path: 'home', component: HomeComponent},
+    {path: 'historial', component: HistorialComponent},
     {path: 'login', component: InicioComponent},
     { path: 'input-data-evaluation', component: InputDataEvaluationComponent },
     {path: 'register', component:RegistroDatosComponent},
