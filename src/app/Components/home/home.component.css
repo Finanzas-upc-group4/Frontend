@@ -76,7 +76,7 @@ body {
     padding: 5vw;
 }
 .image{
-    background-image: url("../Inicio/logo.png");
+    background-image: url("../inicio/logo.png");
     width: 20vh;
     height: 20vh;
     background-size: cover;
