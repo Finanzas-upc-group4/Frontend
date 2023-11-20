@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {ApiService} from "../service/api.service";
 
 @Component({
   selector: 'app-input-data-evaluation',
@@ -7,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./input-data-evaluation.component.css']
 })
 export class InputDataEvaluationComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router,private apiService: ApiService) {
 
   }
   formData: any = {
@@ -31,6 +32,40 @@ export class InputDataEvaluationComponent {
 
   // Método para manejar el envío del formulario
   submitForm() {
+    if (
+        this.formData.vehicleValue <= 0 ||
+        this.formData.initialPayment <= 0 ||
+        this.formData.loanAmount <= 0 ||
+        this.formData.annualInterestRate <= 0 ||
+        this.formData.paymentPeriod <= 0 ||
+        this.formData.individualLifeInsuranceRate <= 0 ||
+        this.formData.vehicleInsuranceRate <= 0 ||
+        this.formData.physicalStatementDelivery <= 0
+    ) {
+      alert('Por favor, complete los datos correctamente.');
+      return;
+    }
+    const dataToSend = {
+      valorDelVehiculo: this.formData.vehicleValue,
+      cuotaInicial: this.formData.initialPayment,
+      montoPrestamo: this.formData.loanAmount,
+      tea: this.formData.annualInterestRate,
+      cuotasAlAnio: this.formData.paymentsPerYear,
+      periodoDePago: this.formData.paymentPeriod,
+      tsd: this.formData.individualLifeInsuranceRate,
+      tsva: this.formData.vehicleInsuranceRate,
+      envioFisicoEstadoDeCuenta: this.formData.physicalStatementDelivery,
+      idUsuario: Number(localStorage.getItem('UserId'))
+    };
+    this.apiService.postGeneralData(dataToSend).subscribe(
+        (respuesta) => {
+          console.log('Datos Guardados exitosamente:', respuesta);
+        },
+        (error) => {
+          console.error('Error al guardar datos:', error);
+        }
+    );
+
     this.formData.annualInterestRate = this.formData.annualInterestRate / 100;
     this.formData.individualLifeInsuranceRate = this.formData.individualLifeInsuranceRate / 100;
     this.formData.vehicleInsuranceRate = this.formData.vehicleInsuranceRate / 100;
@@ -39,7 +74,7 @@ export class InputDataEvaluationComponent {
     const data = JSON.parse(datosRegistro);
 
     //Obtener dias del mes
-    const dateObject = new Date(data.disbursementDate);
+    const dateObject = new Date(data.fechaDesembolso);
     let lastDayOfMonth = new Date(dateObject.getFullYear(), dateObject.getMonth() + 1, 0).getDate();
     console.log("Dias del mes: " + lastDayOfMonth);
 

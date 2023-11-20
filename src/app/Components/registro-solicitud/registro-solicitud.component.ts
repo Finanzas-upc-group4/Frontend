@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {ApiService} from "../../service/api.service";
 
 @Component({
   selector: 'app-registro-solicitud',
@@ -7,35 +8,42 @@ import {Router} from "@angular/router";
   styleUrls: ['./registro-solicitud.component.css']
 })
 export class RegistroSolicitudComponent {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router, private apiService: ApiService) {}
   formData: any = {
-    creditCurrency: 'dolares',
-    disbursementDate: '',
-    payDay: '',
+    monedaActual: 'dolares',
+    fechaDesembolso: '',
+    diaDePago: '',
   };
 
   submitForm() {
+    if (this.formData.creditCurrency === '' || this.formData.disbursementDate === '' || this.formData.payDay <= 0) {
+      alert('Por favor complete todos los campos antes de enviar el formulario.');
+      return;
+    }
     // Generar un nombre único para el JSON
     const uniqueFileName = 'solicitud_' + Date.now() + '.json';
 
     // Crear un objeto JSON con los datos del formulario
     const jsonData = {
-      creditCurrency: this.formData.creditCurrency,
-      disbursementDate: this.formData.disbursementDate,
-      payDay: this.formData.payDay,
-      UserId: 1,
+      monedaActual: this.formData.monedaActual,
+      fechaDesembolso: this.formData.fechaDesembolso,
+      diaDePago: this.formData.diaDePago,
+      userId: Number(localStorage.getItem('UserId'))
     };
+    this.apiService.postDatosRegister(jsonData).subscribe(
+        (respuesta) => {
+          console.log('Datos de solicitud enviados exitosamente:', respuesta);
+          this.router.navigate(['/input-data-evaluation']);
+        },
+        (error) => {
+          console.error('Error al enviar datos de solicitud:', error);
+          // Aquí puedes mostrar un mensaje de error al usuario
+        }
+    );
     localStorage.setItem('solicitud', JSON.stringify(jsonData));
     localStorage.getItem('solicitud');
-    localStorage.setItem('moneda', this.formData.creditCurrency);
-    //console.log("esto es desde el local storage: "+localStorage.getItem('solicitud'));
+    localStorage.setItem('moneda', this.formData.monedaActual);
     const soli :any= (localStorage.getItem('solicitud'));
-    //const soli2 = JSON.parse(soli);
-    //localStorage.removeItem('solicitud')
-    //console.log("esto es desde el json despues del local" + soli);
-    //console.log(soli2.payDay)
-    // Imprimir el JSON en la consola para verificar
     console.log(jsonData);
     this.router.navigate(['/input-data-evaluation']);
   }

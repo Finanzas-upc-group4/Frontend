@@ -3,20 +3,20 @@
 <div class="container">
     <h1 id="titulo">CALCULADORA</h1>
     <div class="image"></div>
-    <form>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <label for="email" id="email-label">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" formControlName="email" required><br>
 
         <label for="password" id="password-label">Contraseña:</label>
-        <input type="password" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" formControlName="password" required><br>
 
         <div id="button-container">
             <div id="button-group">
-                <button type="submit" id="login-button" (click)="enterOnClick()">Iniciar Sesión</button>
-                <button type="submit" id="register-button" (click)="registerOnClick()">Registrarse Aquí</button>
+                <button type="submit" id="login-button">Iniciar Sesión</button>
+                <button type="button" id="register-button" (click)="registerOnClick()">Registrarse Aquí</button>
             </div>
             <br>
-            <a id="forgot-password-link" href="#">Has olvidado tu contraseña?</a>
+            <a id="forgot-password-link" href="#">¿Has olvidado tu contraseña?</a>
         </div>
     </form>
 </div>

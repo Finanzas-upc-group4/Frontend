@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label class="labelText" for="creditCurrency">Moneda de Crédito:</label>
                 <br><br>
-                <select class="inputs" id="creditCurrency" name="creditCurrency" [(ngModel)]="formData.creditCurrency" required>
+                <select class="inputs" id="creditCurrency" name="creditCurrency" [(ngModel)]="formData.monedaActual" required>
                     <option value="dolares">Dólares</option>
                     <option value="soles">Soles</option>
                 </select>
@@ -16,13 +16,13 @@
             <div class="form-group">
                 <label class="labelText" for="disbursementDate">Fecha de Desembolso:</label>
                 <br><br>
-                <input class="inputs" type="date" id="disbursementDate" name="disbursementDate" [(ngModel)]="formData.disbursementDate" required>
+                <input class="inputs" type="date" id="disbursementDate" name="disbursementDate" [(ngModel)]="formData.fechaDesembolso" required>
             </div>
             <br><br>
             <div class="form-group">
                 <label class="labelText" for="payDay">Día de Pago:</label>
                 <br><br>
-                <input class="inputs" type="number" id="payDay" name="payDay" [(ngModel)]="formData.payDay" required>
+                <input class="inputs" type="number" id="payDay" name="payDay" [(ngModel)]="formData.diaDePago" required>
             </div>
             <br><br>
             <button type="submit" class="animated-button">Siguiente</button>
