@@ -7,7 +7,7 @@ import {catchError, Observable, throwError} from "rxjs";
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:8084/api/v1';
+  private apiUrl = 'https://finanzasbd.azurewebsites.net/api/v1';
 
   constructor(private http: HttpClient) {}
 
